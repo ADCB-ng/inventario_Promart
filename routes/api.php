@@ -1,11 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ProductoController;
+
 use App\Http\Controllers\Api\EmpleadoController;
+use App\Http\Controllers\Api\ProductoController;
+use App\Http\Controllers\Api\AreaController;
+use App\Http\Controllers\Api\ProveedorController;
+use App\Http\Controllers\Api\EstadoController;
+use App\Http\Controllers\Api\PedidoProveedorController;
 
-Route::get('/empleados', [empleadoController::class,'index']); 
-route::post('/empleados',[empleadoController::class,'store']);
-
-route::get('/productos',[productoController::class,'index']);
-route::post('/productos',[productoController::class,'store']);
+Route::apiResource('empleados', EmpleadoController::class);
+Route::apiResource('productos', ProductoController::class);
+Route::apiResource('areas', AreaController::class);
+Route::apiResource('proveedores', ProveedorController::class);
+Route::apiResource('estados', EstadoController::class);
+Route::apiResource('pedido-proveedores', PedidoProveedorController::class);
